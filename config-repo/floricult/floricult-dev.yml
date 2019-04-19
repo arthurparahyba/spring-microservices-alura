@@ -1,7 +1,7 @@
 hibernate:
   hbm2ddl:
     auto: update
-    default_schema: alura-floricult
+    default_schema: alura-floricult-dev
 
 spring:
   jpa:
@@ -19,5 +19,5 @@ spring:
     platform: "postgres"
     driver-class-name: "org.postgresql.Driver"
     url: "jdbc:postgresql://localhost:5432/alura-floricult"
-    username: "postgres"
+    username: "postgres-dev"
     password: "root"
