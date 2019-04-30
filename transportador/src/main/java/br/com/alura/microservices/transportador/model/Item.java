@@ -1,13 +1,14 @@
-package br.com.alura.microservices.floricult.model;
+package br.com.alura.microservices.transportador.model;
 
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Florista {
+public class Item {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -17,7 +18,15 @@ public class Florista {
 	private String nome;
 	
 	@Basic(optional=false)
-	private String endereco;
+	private Integer quantidade;
+	
+	@ManyToOne
+	private EntregaProgramada entrega;
+
+	public Item(String nome, Integer quantidade) {
+		this.nome = nome;
+		this.quantidade = quantidade;
+	}
 
 	public Long getId() {
 		return id;
@@ -35,11 +44,11 @@ public class Florista {
 		this.nome = nome;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public Integer getQuantidade() {
+		return quantidade;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
-	}
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
+	} 
 }

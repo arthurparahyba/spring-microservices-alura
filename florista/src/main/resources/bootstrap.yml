@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: floricult
+    name: florista
   profiles:
     active:
       default

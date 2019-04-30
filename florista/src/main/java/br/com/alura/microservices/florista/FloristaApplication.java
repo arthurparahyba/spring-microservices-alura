@@ -1,4 +1,4 @@
-package br.com.alura.microservices.floricult;
+package br.com.alura.microservices.florista;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,16 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-@EnableCircuitBreaker
-public class FloricultApplication {
+public class FloristaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FloricultApplication.class, args);
+		SpringApplication.run(FloristaApplication.class, args);
 	}
-
-	@Bean
-	@LoadBalanced
-	public RestTemplate createRestTemplate() {
-		return new RestTemplate();
-	}
+	
 }

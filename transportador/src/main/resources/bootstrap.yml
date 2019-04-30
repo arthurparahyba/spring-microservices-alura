@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: floricult
+    name: transportador
   profiles:
     active:
       default
