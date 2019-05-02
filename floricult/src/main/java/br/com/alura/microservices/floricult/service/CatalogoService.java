@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 
+import br.com.alura.microservices.floricult.CatalogoClient;
 import br.com.alura.microservices.floricult.dto.ProdutoDTO;
 
 @Service
@@ -20,6 +20,9 @@ public class CatalogoService {
 	
 	@Autowired
 	private RestTemplate restTemplate;
+	
+	@Autowired
+	private CatalogoClient catalogoClient;
 
 	private List<ProdutoDTO> callGetProdutosPorEstado(String estado) {
 		ResponseEntity<List<ProdutoDTO>> result = restTemplate.exchange("http://florista/catalogo/{estado}", 
@@ -39,10 +42,13 @@ public class CatalogoService {
 	}
 	
 	public List<ProdutoDTO> fallbackProdutosPorEstado(String estado) {
-		
 		ProdutoDTO produto = new ProdutoDTO();
 		produto.setNome("Não foi possível buscar os produtos para o "+estado);
-		
 		return Arrays.asList(produto);
+	}
+
+	@HystrixCommand(threadPoolKey="produtosDoFloristaThreadPool")
+	public List<ProdutoDTO> buscaProdutos(String florista, List<String> produtos) {
+		return catalogoClient.getProdutosPorNomeEFlorista(florista, produtos);
 	}
 }

@@ -16,6 +16,9 @@ public class Produto {
 	private Long id;
 	
 	@Basic
+	private String florista;
+	
+	@Basic
 	private String nome;
 	
 	@Basic

@@ -32,6 +32,7 @@ public class EntregaController {
 		return info;
 	}
 	
+	
 	@ApiOperation(value="Efetua uma reserva de uma entrega em uma data e retorna o coupon da reserva.")
 	@RequestMapping(method=RequestMethod.POST)
 	public CouponDeEntrega efetuaReserva(PedidoDeEntrega pedido) {

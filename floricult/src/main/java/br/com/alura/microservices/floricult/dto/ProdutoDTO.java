@@ -6,6 +6,8 @@ public class ProdutoDTO {
 
 	private String nome;
 	
+	private String florista;
+	
 	private String fotos;
 	
 	private BigDecimal preco;
@@ -42,6 +44,14 @@ public class ProdutoDTO {
 
 	public void setTempoDePreparo(Integer tempoDePreparo) {
 		this.tempoDePreparo = tempoDePreparo;
+	}
+
+	public String getFlorista() {
+		return florista;
+	}
+
+	public void setFlorista(String florista) {
+		this.florista = florista;
 	}
 	
 }
