@@ -16,6 +16,7 @@ import br.com.alura.microservices.floricult.dto.InfoDeCompra;
 import br.com.alura.microservices.floricult.dto.ProdutoDTO;
 import br.com.alura.microservices.floricult.service.CatalogoService;
 import br.com.alura.microservices.floricult.service.CompraService;
+import feign.Body;
 
 @RestController
 @RequestMapping("/catalogo")
@@ -33,7 +34,7 @@ public class CatalogoController {
 	}
 	
 	@RequestMapping(path="/compra", method=RequestMethod.POST)
-	public CompraResponseDTO efetuaCompra(CompraRequestDTO compraDTO) {
+	public CompraResponseDTO efetuaCompra(@RequestBody CompraRequestDTO compraDTO) {
 		
 		if(compraDTO == null || compraDTO.getInformacoesDaCompra() == null || compraDTO.getInformacoesDaCompra().isEmpty()) {
 			throw new RuntimeException();

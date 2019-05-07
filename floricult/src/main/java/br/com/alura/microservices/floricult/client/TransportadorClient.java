@@ -10,6 +10,6 @@ import br.com.alura.microservices.floricult.dto.PedidoDeEntregaDTO;
 @FeignClient("transportador")
 public interface TransportadorClient {
 
-	@RequestMapping(method=RequestMethod.POST)
+	@RequestMapping(path="/entrega", method=RequestMethod.POST)
 	CouponDeEntregaDTO efetuaReserva(PedidoDeEntregaDTO pedido);
 }
