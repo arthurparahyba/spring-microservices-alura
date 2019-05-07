@@ -5,7 +5,7 @@ import java.util.List;
 public class CompraRequestDTO {
 
 	private String enderecoDestino;
-	
+	private String distribuidor;
 	private List<InfoDeCompra> informacoesDaCompra;
 
 	public String getEnderecoDestino() {
@@ -22,6 +22,14 @@ public class CompraRequestDTO {
 
 	public void setInformacoesDaCompra(List<InfoDeCompra> informacoesDaCompra) {
 		this.informacoesDaCompra = informacoesDaCompra;
+	}
+
+	public String getDistribuidor() {
+		return distribuidor;
+	}
+
+	public void setDistribuidor(String distribuidor) {
+		this.distribuidor = distribuidor;
 	}
 	
 	

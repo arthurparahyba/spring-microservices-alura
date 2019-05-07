@@ -1,4 +1,4 @@
-package br.com.alura.microservices.floricult;
+package br.com.alura.microservices.floricult.client;
 
 import java.util.List;
 
@@ -13,8 +13,8 @@ import br.com.alura.microservices.floricult.dto.ProdutoDTO;
 @FeignClient("florista")
 public interface CatalogoClient {
 
-	@RequestMapping(method=RequestMethod.GET, value="/catalogo/{florista}/selecao")
-	List<ProdutoDTO> getProdutosPorNomeEFlorista(
+	@RequestMapping(method=RequestMethod.GET, value="/catalogo/{florista}/tempoDePreparo")
+	Integer getTempoParaPreparo(
 			@PathVariable("florista") String florista,
 			@RequestParam("nomes") List<String> produtos);
 }

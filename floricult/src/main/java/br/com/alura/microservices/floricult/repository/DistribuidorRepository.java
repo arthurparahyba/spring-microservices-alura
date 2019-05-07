@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import br.com.alura.microservices.floricult.model.Florista;
 
 @Repository
-public interface FornecedorRepository extends CrudRepository<Florista, Long>{
+public interface DistribuidorRepository extends CrudRepository<Florista, Long>{
 
 	Florista findByNome(String nome);
 	

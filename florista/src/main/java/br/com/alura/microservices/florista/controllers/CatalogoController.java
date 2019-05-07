@@ -25,8 +25,8 @@ public class CatalogoController {
 		return catalogoService.getCatalogoPorEstado(estado);
 	}
 	
-	@RequestMapping(path="/{florista}/selecao", method=RequestMethod.GET)
-	public List<Produto> getProdutosSelecionados(@RequestParam("nomes")List<String> nomeProdutos){
-		return catalogoService.getProdutosSelecionados(nomeProdutos);
+	@RequestMapping(path="/{florista}/tempoDePreparo", method=RequestMethod.GET)
+	public Integer getTempoDePreparo(@RequestParam("nomes")List<String> nomeProdutos){
+		return 3;
 	}
 }

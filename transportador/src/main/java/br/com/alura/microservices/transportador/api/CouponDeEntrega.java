@@ -5,6 +5,7 @@ public class CouponDeEntrega {
 	private String coupon;
 	private String origem;
 	private String destino;
+	private Integer tempoParaTransporte;
 	
 	public String getCoupon() {
 		return coupon;
@@ -25,6 +26,13 @@ public class CouponDeEntrega {
 	}
 	public CouponDeEntrega comDestino(String destino) {
 		this.destino = destino;
+		return this;
+	}
+	public Integer getTempoParaTransporte() {
+		return tempoParaTransporte;
+	}
+	public CouponDeEntrega comTempoParaTransporte(Integer tempoParaTransporte) {
+		this.tempoParaTransporte = tempoParaTransporte;
 		return this;
 	}
 }

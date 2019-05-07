@@ -37,7 +37,8 @@ public class EntregaService {
 		return new CouponDeEntrega()
 				.comCoupon(entrega.getCodigo())
 				.comOrigem(entrega.getOrigem())
-				.comDestino(entrega.getDestino());
+				.comDestino(entrega.getDestino())
+				.comTempoParaTransporte(4);
 	}
 
 }
