@@ -5,7 +5,7 @@ public class CouponDeEntregaDTO {
 	private String coupon;
 	private String origem;
 	private String destino;
-	private Integer tempoDeTransporte;
+	private Integer tempoParaTransporte;
 	
 	public String getCoupon() {
 		return coupon;
@@ -25,10 +25,10 @@ public class CouponDeEntregaDTO {
 	public void setDestino(String destino) {
 		this.destino = destino;
 	}
-	public Integer getTempoDeTransporte() {
-		return tempoDeTransporte;
+	public Integer getTempoParaTransporte() {
+		return tempoParaTransporte;
 	}
-	public void setTempoDeTransporte(Integer tempoDeTransporte) {
-		this.tempoDeTransporte = tempoDeTransporte;
+	public void setTempoParaTransporte(Integer tempoParaTransporte) {
+		this.tempoParaTransporte = tempoParaTransporte;
 	}
 }

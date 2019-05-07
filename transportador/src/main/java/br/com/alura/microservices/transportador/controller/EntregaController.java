@@ -3,6 +3,7 @@ package br.com.alura.microservices.transportador.controller;
 import java.math.BigDecimal;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -35,7 +36,7 @@ public class EntregaController {
 	
 	@ApiOperation(value="Efetua uma reserva de uma entrega em uma data e retorna o coupon da reserva.")
 	@RequestMapping(method=RequestMethod.POST)
-	public CouponDeEntrega efetuaReserva(PedidoDeEntrega pedido) {
+	public CouponDeEntrega efetuaReserva(@RequestBody PedidoDeEntrega pedido) {
 		return entregaService.efetuaReserva(pedido);
 	}
 }

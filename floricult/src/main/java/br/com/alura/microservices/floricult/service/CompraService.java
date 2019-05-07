@@ -24,7 +24,7 @@ public class CompraService {
 		CouponDeEntregaDTO couponDeEntrega = entregaService.geraCouponDeEntrega(pedidoDeEntrega);
 		
 		CompraResponseDTO compraResponseDTO = new CompraResponseDTO();
-		compraResponseDTO.setDataDaEntrega(pedidoDeEntrega.getDataParaTransporte().plusDays(couponDeEntrega.getTempoDeTransporte()));
+		compraResponseDTO.setDataDaEntrega(pedidoDeEntrega.getDataParaTransporte().plusDays(couponDeEntrega.getTempoParaTransporte()));
 		compraResponseDTO.setEnderecoDestino(couponDeEntrega.getDestino());
 		compraResponseDTO.setEnderecoOrigem(couponDeEntrega.getOrigem());
 		compraResponseDTO.setInformacoesDaCompra(carrinho.getInformacoesDaCompra());

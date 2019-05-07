@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -25,7 +26,7 @@ public class EntregaProgramada {
 	@Basic
 	private LocalDate dataDaEntrega;
 	
-	@OneToMany @JoinColumn(name="entrega_id")
+	@OneToMany(cascade=CascadeType.ALL) @JoinColumn(name="entrega_id")
 	private List<Item> itensDeCompra;
  	
 	@Basic
