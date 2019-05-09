@@ -17,4 +17,6 @@ public interface CatalogoClient {
 	Integer getTempoParaPreparo(
 			@PathVariable("florista") String florista,
 			@RequestParam("nomes") List<String> produtos);
+	
+	
 }

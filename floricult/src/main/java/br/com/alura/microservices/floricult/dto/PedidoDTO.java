@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 
-public class PedidoDeEntregaDTO {
+public class PedidoDTO {
 
 	private String enderecoOrigem;
 	private String enderecoDestino;

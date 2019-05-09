@@ -5,11 +5,11 @@ import org.springframework.stereotype.Service;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-import br.com.alura.microservices.floricult.dto.CarrinhoDeCompras;
+import br.com.alura.microservices.floricult.dto.CarrinhoDeComprasDTO;
 import br.com.alura.microservices.floricult.dto.CompraRequestDTO;
 import br.com.alura.microservices.floricult.dto.CompraResponseDTO;
 import br.com.alura.microservices.floricult.dto.CouponDeEntregaDTO;
-import br.com.alura.microservices.floricult.dto.PedidoDeEntregaDTO;
+import br.com.alura.microservices.floricult.dto.PedidoDTO;
 
 @Service
 public class CompraService {
@@ -17,10 +17,14 @@ public class CompraService {
 	@Autowired
 	private EntregaService entregaService;
 	
+	@Autowired
+	private CarrinhoDeCompraService carrinhoService;
+	
 	@HystrixCommand(threadPoolKey="compraThreadPool")
-	public CompraResponseDTO efetuaCompra(CarrinhoDeCompras carrinho) {
+	public CompraResponseDTO efetuaCompra(CompraRequestDTO compraDTO) {
 		
-		PedidoDeEntregaDTO pedidoDeEntrega = entregaService.geraPedidoDeEntrega(carrinho);
+		CarrinhoDeComprasDTO carrinho = carrinhoService.getCarrinhoDeCompra(compraDTO);
+		PedidoDTO pedidoDeEntrega = entregaService.realizaPedido(carrinho);
 		CouponDeEntregaDTO couponDeEntrega = entregaService.geraCouponDeEntrega(pedidoDeEntrega);
 		
 		CompraResponseDTO compraResponseDTO = new CompraResponseDTO();
@@ -31,5 +35,4 @@ public class CompraService {
 		
 		return compraResponseDTO;
 	}
-	
 }

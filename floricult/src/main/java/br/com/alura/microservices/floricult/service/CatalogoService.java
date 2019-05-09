@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
 import br.com.alura.microservices.floricult.client.CatalogoClient;
-import br.com.alura.microservices.floricult.dto.CarrinhoDeCompras;
+import br.com.alura.microservices.floricult.dto.CarrinhoDeComprasDTO;
 import br.com.alura.microservices.floricult.dto.ProdutoDTO;
 
 @Service
@@ -41,14 +41,14 @@ public class CatalogoService {
 		return produtos;
 	}
 	
+	@HystrixCommand(threadPoolKey="produtosDoFloristaThreadPool")
+	public Integer getTempoParaPreparo(CarrinhoDeComprasDTO carrinho) {
+		return catalogoClient.getTempoParaPreparo(carrinho.getDistribuidor(), carrinho.getNomesDosProdutos());
+	}
+
 	public List<ProdutoDTO> fallbackProdutosPorEstado(String estado) {
 		ProdutoDTO produto = new ProdutoDTO();
 		produto.setNome("Não foi possível buscar os produtos para o "+estado);
 		return Arrays.asList(produto);
-	}
-
-	@HystrixCommand(threadPoolKey="produtosDoFloristaThreadPool")
-	public Integer getTempoParaPreparo(CarrinhoDeCompras carrinho) {
-		return catalogoClient.getTempoParaPreparo(carrinho.getDistribuidor(), carrinho.getNomesDosProdutos());
 	}
 }

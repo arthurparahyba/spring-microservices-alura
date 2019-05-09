@@ -3,7 +3,7 @@ package br.com.alura.microservices.floricult.dto;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CarrinhoDeCompras {
+public class CarrinhoDeComprasDTO {
 	
 	private String distribuidor;
 	private String enderecoDestino;
