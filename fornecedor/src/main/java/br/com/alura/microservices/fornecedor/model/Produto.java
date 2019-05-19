@@ -1,4 +1,4 @@
-package br.com.alura.microservices.catalogo.model;
+package br.com.alura.microservices.fornecedor.model;
 
 import java.math.BigDecimal;
 

@@ -1,4 +1,4 @@
-package br.com.alura.microservices.catalogo;
+package br.com.alura.microservices.fornecedor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,10 +8,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
-public class FloristaApplication {
+public class FornecedorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FloristaApplication.class, args);
+		SpringApplication.run(FornecedorApplication.class, args);
 	}
 	
 }

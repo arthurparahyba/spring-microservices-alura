@@ -1,4 +1,4 @@
-package br.com.alura.microservices.catalogo.controllers;
+package br.com.alura.microservices.fornecedor.controllers;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.alura.microservices.catalogo.model.Produto;
-import br.com.alura.microservices.catalogo.service.CatalogoService;
+import br.com.alura.microservices.fornecedor.model.Produto;
+import br.com.alura.microservices.fornecedor.service.CatalogoService;
 
 @RestController
 @RequestMapping("/catalogo")

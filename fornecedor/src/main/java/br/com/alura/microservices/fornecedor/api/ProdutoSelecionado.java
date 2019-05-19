@@ -1,4 +1,4 @@
-package br.com.alura.microservices.catalogo.api;
+package br.com.alura.microservices.fornecedor.api;
 
 public class ProdutoSelecionado {
 

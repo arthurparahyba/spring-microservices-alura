@@ -1,7 +1,7 @@
 
 spring:
   application:
-    name: catalogo
+    name: fornecedor
   profiles:
     active:
       default
