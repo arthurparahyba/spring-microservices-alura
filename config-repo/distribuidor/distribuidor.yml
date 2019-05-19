@@ -1,8 +1,7 @@
-
 spring:
   jpa:
     hibernate.ddl-auto: update
   datasource:
-    url: 'jdbc:mysql://localhost:3306/catalogo?serverTimezone=UTC'
+    url: 'jdbc:mysql://localhost:3306/distribuidor?serverTimezone=UTC'
     username: root
     password: root
