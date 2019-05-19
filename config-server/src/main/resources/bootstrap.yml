@@ -9,5 +9,5 @@ spring:
             enabled: false
           git:
             uri: https://github.com/arthurparahyba/spring-microservices-alura/
-            search-paths: config-repo/floricult, config-repo/florista, config-repo/transportador
-            
+            search-paths: config-repo/loja, config-repo/florista, config-repo/transportador
+      
