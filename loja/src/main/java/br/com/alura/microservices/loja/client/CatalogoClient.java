@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.alura.microservices.loja.dto.ProdutoDTO;
 
-@FeignClient("florista")
+@FeignClient("fornecedor")
 public interface CatalogoClient {
 
-	@RequestMapping(method=RequestMethod.GET, value="/catalogo/{florista}/tempoDePreparo")
+	@RequestMapping(method=RequestMethod.GET, value="/catalogo/{estado}/tempoDePreparo")
 	Integer getTempoParaPreparo(
-			@PathVariable("florista") String florista,
+			@PathVariable("estado") String estado,
 			@RequestParam("nomes") List<String> produtos);
 	
 	

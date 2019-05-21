@@ -29,7 +29,7 @@ public class CatalogoController {
 		return catalogoService.getCatalogoPorEstado(estado);
 	}
 	
-	@RequestMapping(path="/{florista}/tempoDePreparo", method=RequestMethod.GET)
+	@RequestMapping(path="/{estado}/tempoDePreparo", method=RequestMethod.GET)
 	public Integer getTempoDePreparo(@RequestParam("nomes")List<String> nomeProdutos){
 		return 3;
 	}

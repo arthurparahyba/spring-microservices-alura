@@ -26,7 +26,7 @@ public class CatalogoService {
 	private CatalogoClient catalogoClient;
 
 	private List<ProdutoDTO> callGetProdutosPorEstado(String estado) {
-		ResponseEntity<List<ProdutoDTO>> result = restTemplate.exchange("http://florista/catalogo/{estado}", 
+		ResponseEntity<List<ProdutoDTO>> result = restTemplate.exchange("http://fornecedor/catalogo/{estado}", 
 				HttpMethod.GET, null, 
 				new ParameterizedTypeReference<List<ProdutoDTO>>(){} ,
 				estado);
