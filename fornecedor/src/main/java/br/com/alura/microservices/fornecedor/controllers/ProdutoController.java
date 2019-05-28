@@ -16,9 +16,9 @@ import br.com.alura.microservices.fornecedor.service.CatalogoService;
 
 @RestController
 @RequestMapping("/catalogo")
-public class CatalogoController {
+public class ProdutoController {
 	
-	private Logger LOG = LoggerFactory.getLogger(CatalogoController.class);
+	private Logger LOG = LoggerFactory.getLogger(ProdutoController.class);
 	
 	@Autowired
 	private CatalogoService catalogoService;
